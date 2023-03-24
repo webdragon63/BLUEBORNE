@@ -1,9 +1,5 @@
 # BLUEBORNE
 
-## Overview
-
-This is an implementation of the BLUEBORNE Android heap overflow vulnerability described in the Blueborne whitepaper released by Armis. Further reading: https://www.armis.com/blueborne/
-
 In the current state, this code only demonstrates the overflow and the ability of crashing the bluetooth service. Again, this is not a fully developed remote code execution, but it can be.
 
 ## Instructions
@@ -32,11 +28,11 @@ The `info` command will show the indices of your devices.
 
 Entering `select 0` will make the first bluetooth controller active. A shortcut for this is to launch the tool with `btmgmt --index 0`.
 
-Make sure you can discover devices with the `find` command. Your Android's screen must be on and the bluetooth settings view must be open for it to be discoverable. Note that discoverability is not a prerequisite for exploiting this vulnerability as detailed in the whitepaper released by Armis.
+Make sure you can discover devices with the `find` command. Your Android's screen must be on and the bluetooth settings view must be open for it to be discoverable.
 
 For the exploit to work without manual pairing, you must set the IO capabilities of your host with `io-cap 0x03` in the btmgmt tool.
 
-With this set, run the code with `python Blueborne.py TARGET=XX:XX:XX:XX:XX:XX` and your Android device's bluetooth service should crash. It might take a few tries. Currently the code sends 30 of these invalid packets to corrupt enough memory for the process to crash.
+With this set, run the code with `python3 Blueborne.py TARGET=XX:XX:XX:XX:XX:XX` and your Android device's bluetooth service should crash. It might take a few tries. Currently the code sends 30 of these invalid packets to corrupt enough memory for the process to crash.
 
 Happy hacking ;)
 
