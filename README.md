@@ -1,8 +1,8 @@
-# CVE-2017-0781 PoC
+# BLUEBORNE
 
 ## Overview
 
-This is an implementation of the CVE-2017-0781 Android heap overflow vulnerability described in the Blueborne whitepaper released by Armis. Further reading: https://www.armis.com/blueborne/
+This is an implementation of the BLUEBORNE Android heap overflow vulnerability described in the Blueborne whitepaper released by Armis. Further reading: https://www.armis.com/blueborne/
 
 In the current state, this code only demonstrates the overflow and the ability of crashing the bluetooth service. Again, this is not a fully developed remote code execution, but it can be.
 
@@ -36,7 +36,7 @@ Make sure you can discover devices with the `find` command. Your Android's scree
 
 For the exploit to work without manual pairing, you must set the IO capabilities of your host with `io-cap 0x03` in the btmgmt tool.
 
-With this set, run the code with `python CVE-2017-0781.py TARGET=XX:XX:XX:XX:XX:XX` and your Android device's bluetooth service should crash. It might take a few tries. Currently the code sends 30 of these invalid packets to corrupt enough memory for the process to crash.
+With this set, run the code with `python Blueborne.py TARGET=XX:XX:XX:XX:XX:XX` and your Android device's bluetooth service should crash. It might take a few tries. Currently the code sends 30 of these invalid packets to corrupt enough memory for the process to crash.
 
 Happy hacking ;)
 
