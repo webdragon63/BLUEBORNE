@@ -2,7 +2,7 @@ from pwn import *
 import bluetooth
 
 if not 'TARGET' in args:
-    log.info('Usage: python CVE-2017-0781.py TARGET=XX:XX:XX:XX:XX:XX')
+    log.info('Usage:python BlueBorne.py TARGET=XX:XX:XX:XX:XX:XX')
     exit()
 
 target = args['TARGET']
